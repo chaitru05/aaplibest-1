@@ -1,7 +1,7 @@
 .volunteer-section {
   position: relative;
   min-height: 70vh;
-  background-image: url('volunter.jpeg');
+  background-image: url('./volunter.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
