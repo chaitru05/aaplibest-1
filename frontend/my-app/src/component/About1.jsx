@@ -150,7 +150,7 @@ const About1 = () => {
               animate={inView ? "visible" : "hidden"}
             >
               <img
-                src="./about-busimg.jpeg"
+                src="/about-busimg.jpeg"
                 alt="BEST Bus Service"
                 style={{
                   width: "700px",
