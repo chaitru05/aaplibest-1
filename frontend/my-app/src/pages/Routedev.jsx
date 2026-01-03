@@ -16,7 +16,7 @@ import { translations } from "../data/translations"
 import Footer from "../component/Footer"
 
 // Styles
-import "../style/route.css"
+import "../style/Route.css"
 
 
 // ==============================
