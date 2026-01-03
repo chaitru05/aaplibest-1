@@ -1,0 +1,653 @@
+/* ==================== HERO SECTION ==================== */
+.route-section {
+  position: relative;
+  min-height: 600px;
+  height: 80vh;
+  background-color: #f9c85d;
+  overflow: hidden;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.route-content-section {
+  position: relative;
+  z-index: 10;
+  max-width: 600px;
+  padding: 10rem 2rem;
+  margin-left: 50px;
+}
+
+.route-heading {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+/* Background decorative element */
+.route-cont {
+  position: absolute;
+  height: 650px;
+  margin-top: -30px;
+  width: 55%;
+  border-radius: 500px;
+  border-width: 100px;
+  margin-left: 150px;
+  background-color: #eaa611;
+}
+
+/* Image Mask Container */
+.route-image-mask-container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 75%;
+  overflow: visible;
+}
+
+.route-image-mask {
+  position: absolute;
+  right: -280px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: calc(100% + 280px);
+  height: 110%;
+  clip-path: ellipse(62% 70% at 78% 50%);
+  overflow: hidden;
+}
+
+.route-image-mask img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* ==================== WRAPPER SECTION ==================== */
+.route-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  color: #222;
+  padding: 5rem 3rem;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+/* LEFT SIDE - grid of images */
+.route-left {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.route-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "img1 img2"
+    "wide wide";
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.route-card {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.route-card:hover {
+  transform: translateY(-4px);
+}
+
+.route-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.route-card.wide {
+  grid-area: wide;
+}
+
+.route-card.wide img {
+  height: 250px;
+}
+
+/* RIGHT SIDE - text content */
+.route-right {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  background-color: #ffffff;
+  border-left: 30px solid #f9c85d;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.route-right h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #48010b;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.route-right p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 0;
+  color: #333;
+}
+
+/* ==================== ACHIEVEMENTS SECTION ==================== */
+.route-achievements {
+  background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%);
+  padding: 80px 20px;
+  min-height: auto;
+}
+
+.achievements-container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.achievements-heading {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 60px;
+  line-height: 1.2;
+}
+
+.content-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Overlay */
+.video-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999; /* higher than header */
+}
+
+/* Modal box */
+.video-modal {
+  width: 90%;
+  max-width: 900px;
+  height: 500px;
+  background: #000;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* iframe MUST have height */
+.video-modal iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Close button */
+.video-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 100000;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .video-modal {
+    height: 260px;
+  }
+}
+
+
+.video-section {
+  position: relative;
+  flex-shrink: 0;
+  width: 480px;
+  height: 500px;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.video-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.video-section:hover img {
+  transform: scale(1.05);
+}
+
+.play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.video-section:hover .play-overlay {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.play-icon {
+  color: white;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+  transition: transform 0.3s ease;
+}
+
+.video-section:hover .play-icon {
+  transform: scale(1.1);
+}
+
+.achievements-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.achievement-card {
+  background: white;
+  border: 3px solid #000000;
+  border-radius: 12px;
+  padding: 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-title-ach {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.card-description-ach {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #181515;
+  margin: 0;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+/* Large Tablets and Small Laptops */
+@media (max-width: 1400px) {
+  .content-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .video-section {
+    width: 100%;
+    max-width: 600px;
+    height: 500px;
+  }
+
+  .achievements-grid {
+    width: 100%;
+  }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .route-section {
+    height: 70vh;
+    min-height: 500px;
+  }
+
+  .route-content-section {
+    padding: 8rem 2rem;
+    margin-left: 30px;
+  }
+
+  .route-cont {
+    width: 50%;
+    margin-left: 100px;
+    height: 550px;
+  }
+
+  .route-image-mask-container {
+    width: 70%;
+  }
+
+  .route-image-mask {
+    right: -200px;
+    width: calc(100% + 200px);
+  }
+
+  .route-wrapper {
+    padding: 4rem 2rem;
+    gap: 2.5rem;
+  }
+
+  .route-right h2 {
+    font-size: 1.8rem;
+  }
+
+  .route-right p {
+    font-size: 1rem;
+  }
+}
+
+/* Medium Tablets */
+@media (max-width: 900px) {
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .route-wrapper {
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+
+  .route-left {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .route-right {
+    border-left: none;
+    border-top: 8px solid #f9c85d;
+    max-width: 600px;
+    width: 100%;
+  }
+}
+
+/* Small Tablets and Large Phones */
+@media (max-width: 768px) {
+  .route-section {
+    height: auto;
+    min-height: 550px;
+    margin-top: 80px;
+  }
+
+  .route-content-section {
+    padding: 6rem 1.5rem;
+    margin-left: 0;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .route-heading {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .route-cont {
+    display: none;
+  }
+
+  .route-image-mask-container {
+    width: 100%;
+    height: 50%;
+    top: auto;
+    bottom: 0;
+  }
+
+  .route-image-mask {
+    clip-path: ellipse(70% 55% at 50% 85%);
+    top: auto;
+    bottom: -100px;
+    right: 0;
+    transform: none;
+    height: calc(100% + 100px);
+    width: 100%;
+  }
+
+  .route-image-mask::after {
+    clip-path: ellipse(70% 55% at 50% 85%);
+  }
+
+  .route-wrapper {
+    padding: 2.5rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .route-card-grid {
+    max-width: 400px;
+  }
+
+  .route-card img {
+    height: 180px;
+  }
+
+  .route-card.wide img {
+    height: 220px;
+  }
+
+  .route-right {
+    padding: 1.5rem;
+    border-top: 6px solid #f9c85d;
+  }
+
+  .route-right h2 {
+    font-size: 1.6rem;
+  }
+
+  .route-right p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .route-achievements {
+    padding: 60px 16px;
+  }
+
+  .achievements-heading {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .content-layout {
+    gap: 30px;
+  }
+
+  .video-section {
+    height: 400px;
+  }
+
+  .achievement-card {
+    padding: 20px;
+  }
+
+  .card-title-ach {
+    font-size: 1.25rem;
+  }
+
+  .card-description-ach {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+  .route-section {
+    min-height: 400px;
+    margin-top: 60px;
+  }
+  .route-image-mask-container{
+    top: 100px;
+  }
+  .route-content-section {
+    padding: 4rem 0rem;
+  }
+
+  .route-heading {
+    font-size: clamp(1.75rem, 7vw, 2.5rem);
+  }
+
+  .route-wrapper {
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .route-card-grid {
+    max-width: 320px;
+    gap: 0.75rem;
+  }
+
+  .route-card img {
+    height: 150px;
+  }
+
+  .route-card.wide img {
+    height: 180px;
+  }
+
+  .route-right {
+    padding: 1rem;
+    width: 100px;   border-top: 5px solid #f9c85d;
+  }
+
+  .route-right h2 {
+    font-size: 1.4rem;
+  }
+
+  .route-right p {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .achievements-heading {
+    font-size: 1.75rem;
+    margin-bottom: 30px;
+  }
+
+  .video-section {
+    height: 300px;
+  }
+
+  .achievement-card {
+    padding: 18px;
+  }
+
+  .card-title-ach {
+    font-size: 1.1rem;
+  }
+
+  .card-description-ach {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+}
+
+/* Very Small Phones */
+@media (max-width: 380px) {
+  .route-section {
+    min-height: 450px;
+    margin-top: 50px;
+  }
+
+  .route-content-section {
+    padding: 3rem 0.75rem;
+  }
+
+  .route-heading {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .route-wrapper {
+    padding: 1.5rem 0.75rem;
+    gap: 1.25rem;
+  }
+
+  .route-card-grid {
+    max-width: 280px;
+    gap: 0.6rem;
+  }
+
+  .route-card img {
+    height: 130px;
+  }
+
+  .route-card.wide img {
+    height: 160px;
+  }
+
+  .route-right {
+    padding: 1rem;
+  }
+
+  .route-right h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .route-right p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .route-achievements {
+    padding: 40px 12px;
+  }
+
+  .achievements-heading {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+
+  .video-section {
+    height: 250px;
+  }
+
+  .achievement-card {
+    padding: 15px;
+  }
+
+  .card-title-ach {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .card-description-ach {
+    font-size: 0.8rem;
+    line-height: 1.45;
+  }
+}

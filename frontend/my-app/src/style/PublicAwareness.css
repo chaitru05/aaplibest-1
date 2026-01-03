@@ -1,0 +1,216 @@
+/* Public Awareness Section */
+/* Added publicawar- prefix to all class names */
+.main-public{
+  position: relative;
+}
+.publicawar-public-awareness {
+  margin-top: 60px;
+  padding: 40px 20px;
+  background-color: #f5f5f5;
+  position: relative;
+}
+
+.publicawar-awareness-header {
+  position: relative;
+  background-color: #670f0f;
+  border-radius: 12px;
+  padding: 40px 20px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.publicawar-awareness-title {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.publicawar-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Social Media Section */
+.publicawar-social-media {
+  padding: 40px 20px;
+  background-color: #f5f5f5;
+}
+
+.publicawar-social-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.publicawar-social-title {
+  margin: 0 0 16px 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: #333333;
+}
+
+.publicawar-social-description {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #666666;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.publicawar-cards-grid-three {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Card Styles */
+.publicawar-card {
+  background-color: rgb(49, 34, 34);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.publicawar-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.publicawar-card-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+.publicawar-card-description {
+  padding: 20px;
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e8e8e8;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .publicawar-cards-grid-three {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .publicawar-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .publicawar-cards-grid-three {
+    grid-template-columns: 1fr;
+  }
+
+  .publicawar-awareness-title {
+    font-size: 24px;
+  }
+
+  .publicawar-awareness-header {
+    padding: 30px 15px;
+  }
+
+  .publicawar-social-title {
+    font-size: 24px;
+  }
+
+  .publicawar-social-description {
+    font-size: 14px;
+  }
+
+  .publicawar-card-image {
+    height: 220px;
+  }
+
+  .publicawar-card-description {
+    padding: 16px;
+    font-size: 13px;
+  }
+}
+/* ========================= */
+/* Video Card Overlay */
+/* ========================= */
+
+.video-card {
+  position: relative;
+}
+
+.play-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.video-card:hover .play-overlay {
+  opacity: 1;
+}
+
+/* ========================= */
+/* Video Modal */
+/* ========================= */
+
+.video-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.video-modal {
+  width: 90%;
+  max-width: 900px;
+  height: 500px;
+  background: #000;
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-modal iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .video-modal {
+    height: 240px;
+  }
+}

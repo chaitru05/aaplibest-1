@@ -1,0 +1,323 @@
+/* Added new classes and adjusted existing styles for non-Tailwind implementation */
+.vision-section-container {
+  padding: 4rem 1rem; /* py-16 px-4 */
+  background-color: #fdfaf5; /* Light cream background */
+}
+
+.vision-section-content {
+  max-width: 48rem; /* max-w-3xl */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.heading {
+  font-size: 2.5rem; /* Adjust as needed */
+  font-weight: 700;
+  color: #333; /* Dark gray/black for the heading */
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block; /* To center the underline with the text */
+}
+
+.underline {
+  position: absolute;
+  bottom: -0.5rem; /* Adjust position below the text */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px; /* Length of the underline */
+  height: 4px; /* Thickness of the underline */
+  background-color: #facc15; /* Yellow color */
+}
+
+.vision-section-text {
+  font-size: 1.125rem; /* Adjust as needed */
+  line-height: 1.6;
+  color: #555; /* Slightly lighter gray for the paragraph */
+  margin-top: 2rem;
+  max-width: 600px; /* Limit width for readability */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.vision-section-content {
+ 
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.heading {
+  font-size: 2.5rem; /* Adjust as needed */
+  font-weight: 700;
+  color: #ffffff; /* Dark gray/black for the heading */
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block; /* To center the underline with the text */
+}
+
+.underline {
+  position: absolute;
+  bottom: -0.5rem; /* Adjust position below the text */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px; /* Length of the underline */
+  height: 4px; /* Thickness of the underline */
+  background-color: #facc15; /* Yellow color */
+}
+
+.vision-section-text {
+  font-size: 1.125rem; /* Adjust as needed */
+  line-height: 1.6;
+  color: #000000; /* Slightly lighter gray for the paragraph */
+  margin-top: 2rem;
+  max-width: 600px; /* Limit width for readability */
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-section-container {
+  padding: 64px 16px; /* Equivalent to py-16 px-4 */
+  background-color: #fdfcfb; /* Light cream background */
+}
+
+.hero-section-content {
+  max-width: 1200px; /* Max width for content */
+  margin: 0 auto; /* Center content */
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 32px; /* Gap between columns */
+  margin-bottom: 48px; /* Space before video */
+}
+
+.hero-text-column {
+  flex: 1;
+  min-width: 300px; /* Minimum width before wrapping */
+}
+
+.hero-description-column {
+  flex: 1;
+  min-width: 300px; /* Minimum width before wrapping */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ 
+}
+
+.hero-heading {
+  font-size: 32px; /* Large heading size */
+  font-weight: 700; /* Bold */
+  line-height: 1.2;
+  color: #333; /* Dark text color */
+  margin-bottom: 16px;
+}
+
+.hero-heading-accent {
+  color: #a5a728; /* Green accent color for "Better India" */
+}
+
+.hero-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555; /* Slightly lighter text color */
+  margin-bottom: 32px;
+   font-family: sans-serif;
+}
+
+.shuddhi-brand {
+  font-weight: 600; /* Bold for brand name */
+}
+
+.hero-stats {
+  display: flex;
+  gap: 48px; /* Space between stats */
+}
+
+.hero-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-stat-number {
+  font-size: 36px; /* Large number size */
+  font-weight: 700; /* Bold */
+  color: #007bff; /* Blue color for numbers */
+}
+
+.hero-stat-label {
+  font-size: 14px;
+  color: #777; /* Lighter color for labels */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hero-video-container {
+  max-width: 1200px; /* Max width for video */
+  margin: 0 auto; /* Center video */
+}
+
+.hero-video-placeholder {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px; /* Slightly rounded corners for video */
+  object-fit: cover;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .vision-section-container{
+    margin-top: 100px;
+  }
+  .hero-section-content {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .hero-heading {
+    font-size: 36px;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .hero-description{
+    display: none;
+  }
+}
+/* ================================
+   CONTAINER
+================================ */
+.best-day-2-container {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ================================
+   GRID LAYOUT LIKE YOUR IMAGE
+================================ */
+.best-day-2-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+}
+
+/* Make the last image FULL-WIDTH (like your layout) */
+.best-day-2-item:last-child {
+  grid-column: span 2;
+}
+
+/* ================================
+   IMAGE CARD
+================================ */
+.best-day-2-image-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.best-day-2-image-wrapper:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+}
+
+.best-day-2-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ================================
+   VIDEO OVERLAY
+================================ */
+.best-day-2-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.best-day-2-play-btn svg {
+  cursor: pointer;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .best-day-2-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .best-day-2-item:last-child {
+    grid-column: span 1; /* full width automatically */
+  }
+}
+
+/* FULL SCREEN OVERLAY — FORCE CENTER */
+.video-modal {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+
+  background: rgba(0, 0, 0, 0.85);
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  z-index: 2147483647 !important; /* MAX possible */
+}
+
+/* MODAL BOX — CENTERED */
+.video-modal-content {
+  position: relative;
+  width: 90vw;
+  max-width: 900px;
+  height: 500px;
+
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* IFRAME — FILL BOX */
+.video-modal-content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* CLOSE BUTTON */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .video-modal-content {
+    height: 260px;
+  }
+}

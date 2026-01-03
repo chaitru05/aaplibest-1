@@ -1,0 +1,529 @@
+.investor-page {
+  position: relative;
+  height:600px;
+  display: flex;
+  overflow: hidden;
+  margin:50px;
+  margin-top: 120px;
+  /* Changed from teal to light yellow base color */
+ 
+}
+.public-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=1920');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.public-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  z-index: 1;
+}
+
+.public-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.public-hero-title {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.4);
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .public-hero {
+    height: 70vh;
+  }
+
+  .public-hero-content {
+    padding: 0 1.5rem;
+  }
+
+  .public-hero-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .public-hero-title {
+    font-size: 2rem;
+  }
+}
+
+/* Left content section */
+.content-section {
+  position: relative;
+  z-index: 10;
+  width: 35%;
+  display: flex;
+  align-items: center;
+ 
+
+ background:rgba(255, 221, 0, 0.3);
+ 
+  clip-path: polygon(0 0, 97% 0, 69% 100%, 0% 100%); }
+
+
+.main-heading-public {
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: 700;
+  color: black;
+  line-height: 1.1;
+  margin-bottom: 4rem;
+  margin-left: 70px;
+  letter-spacing: -1px;
+}
+
+/* Dropdown container */
+
+
+/* Diagonal divider */
+
+/* Right image section */
+.image-section-public {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  
+}
+
+/* Added white transparent overlay on image */
+
+
+.hero-image-public {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Magenta accent triangle */
+.accent-triangle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  /* Increased triangle size for more accurate design */
+  border-width: 0 0 400px 350px;
+  border-color: transparent transparent #c2185b transparent;
+  z-index: 20;
+  /* Added subtle shadow for depth */
+  filter: drop-shadow(-2px -2px 8px rgba(194, 24, 91, 0.3));
+}
+.public-awareness-section {
+  width: 100%;
+  min-height: 100vh;
+  background: hsl(var(--background));
+  padding: 5rem 2rem;
+}
+
+.awareness-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+
+}
+
+.awareness-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: hsl(var(--foreground));
+  margin-bottom: 2rem;
+  line-height: 1.2;
+  font-family: Dm Serif Display, serif;
+}
+
+.awareness-description {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.8;
+  text-align: center;
+  color: hsl(var(--muted-foreground));
+  max-width: 1100px;
+  margin: 0 auto ;
+  font-weight: 400;
+}
+
+/* FOUR-IMAGE STAGGERED LAYOUT */
+.awareness-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+ 
+  align-items: start;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.media {
+  position: relative;
+}
+
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+   border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.image-left {
+  aspect-ratio: 16 / 10;
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
+}
+
+.image-right {
+  aspect-ratio: 16 / 10;
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+  margin-top: 300px; /* pushes the right image down for staggered effect */
+}
+
+.awareness-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.image-wrapper:hover .awareness-image {
+  transform: scale(1.05);
+}
+
+/* CAPTIONS BESIDE IMAGES */
+.caption {
+  position: absolute;
+  max-width: 22rem;
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-dark)) 100%);
+  color: hsl(var(--primary-foreground));
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.caption-right {
+  top: 50%;
+  right: -2rem; /* sit beside the left image */
+  transform: translateY(-50%);
+}
+
+.caption-left {
+  top: 20%;
+  left: -2rem; /* sit beside the right image */
+}
+
+.caption-title {
+  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.caption-subtitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.95;
+  line-height: 1.5;
+  border-left: 3px solid hsl(var(--primary-foreground));
+  padding-left: 0.75rem;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .awareness-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .image-right {
+    margin-top: 0;
+  }
+
+  .caption {
+    position: static;
+    background: transparent;
+    color: hsl(var(--foreground));
+    box-shadow: none;
+    padding: 0.75rem 0 0;
+  }
+
+  .caption-subtitle {
+    border-left: 3px solid hsl(var(--ring));
+    padding-left: 0.75rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .public-awareness-section {
+    padding: 3rem 1rem;
+  }
+
+  .awareness-content {
+    gap: 1.5rem;
+  }
+
+  .caption-title {
+    font-size: 1.125rem;
+  }
+
+  .caption-subtitle {
+    font-size: 0.75rem;
+  }
+}
+/* Responsive design */
+@media (max-width: 1024px) {
+  .content-section {
+    width: 100%;
+    clip-path: none;
+  }
+
+  .content-wrapper {
+    margin-left: 2rem;
+  }
+
+  .main-heading {
+    font-size: 4rem;
+  }
+
+  .image-section {
+    display: none;
+  }
+
+  .diagonal-divider {
+    display: none;
+  }
+
+  .accent-triangle {
+    border-width: 0 0 200px 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    margin-left: 0;
+  }
+
+  .main-heading {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .bayer-logo {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .dropdown-container {
+    max-width: 100%;
+  }
+
+  .accent-triangle {
+    border-width: 0 0 150px 150px;
+  }
+}
+/* ============================= */
+/* DIAGONAL AWARENESS SECTIONS   */
+/* ============================= */
+
+.diagonal-section {
+  width: 1400px;
+  background: hsl(var(--background));
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+/* Each alternating content block */
+.diagonal-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+  width: 1400px;
+  margin: 0 4rem;
+  position: relative;
+}
+
+/* Alternate layout */
+.diagonal-container.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Image box with yellow background behind */
+.diagonal-image-box {
+  position: relative;
+  width: 45%;
+  height: 400px;
+}
+
+.yellow-bg {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  right: -25px;
+  bottom: -25px;
+  background: rgba(255, 221, 0, 0.3); /* Light yellow accent */
+  z-index: 1;
+  border-radius: 16px;
+  transform: rotate(-1deg); /* slight angle for "diagonal" feel */
+}
+
+.diagonal-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  transition: transform 0.5s ease;
+}
+
+.diagonal-image:hover {
+  transform: scale(1.05);
+}
+
+/* Text box styling */
+.diagonal-text-box {
+  width: 45%;
+  position: relative;
+  z-index: 3;
+}
+
+.diagonal-subtitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.diagonal-pharma-subtitle {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.7;
+}
+
+/* Optional: diagonal title (if you want to use one) */
+.diagonal-title {
+  font-size: 2.5rem;
+  font-style: italic;
+  font-weight: 700;
+  color: hsl(var(--primary));
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+/* Hover accent effect (optional aesthetic touch) */
+.diagonal-container:hover .yellow-bg {
+  background: rgba(255, 221, 0, 0.45);
+  transition: background 0.4s ease;
+}
+
+/* ============================= */
+/* RESPONSIVE BEHAVIOR */
+/* ============================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .diagonal-container,
+  .diagonal-container.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .diagonal-image-box,
+  .diagonal-text-box {
+    width: 100%;
+  }
+
+  .yellow-bg {
+    top: 10px;
+    left: 10px;
+    right: -10px;
+    bottom: -10px;
+  }
+
+  .diagonal-text-box {
+    margin-top: 2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .diagonal-section {
+    padding: 3rem 1rem;
+    gap: 5rem;
+  }
+
+  .diagonal-image-box {
+    height: 300px;
+  }
+
+  .diagonal-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .diagonal-pharma-subtitle {
+    font-size: 0.8rem;
+  }
+}
+
+/* ============================= */
+/* OPTIONAL THEME VARIABLES */
+/* ============================= */
+
+/* These are fallback values in case you're not using Tailwind or CSS vars */
+:root {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 10%;
+  --muted-foreground: 0 0% 40%;
+  --primary: 45 100% 50%; /* yellow tone */
+  --primary-foreground: 0 0% 100%;
+}

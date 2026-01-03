@@ -1,0 +1,188 @@
+.feedback-container {
+  padding-top:50px;
+  padding-bottom: 50px;
+  /* Simple white background instead of gradient */
+  background: white;
+  position: relative;
+}
+
+/* Removed all curve-related styles */
+
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  
+  gap: 0;
+}
+
+.image-section {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  /* Removed general border-radius and box-shadow */
+}
+
+/* Added specific rounded corners for left and right images */
+.left-rounded {
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.right-rounded {
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+.central-content {
+  flex: 1.5;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* Added padding for spacing from images */
+  padding: 0 3rem;
+}
+
+/* Removed content-card styles and decorative elements */
+
+.main-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  font-family: "playfair display", serif;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #373333;
+  margin-bottom: 2rem;
+  font-weight: 300;
+  font-family: "inter", sans-serif;
+}
+
+.content-text {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.content-text p {
+  color: #374151;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  font-family: "inter", sans-serif;
+}
+
+.content-text p:last-child {
+  margin-bottom: 0;
+}
+
+.feedback-button {
+  background: rgb(49, 34, 34);
+  color: white;
+  border: 2px solid #1f2937;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.feedback-button:hover {
+  background: white;
+  color: #1f2937;
+  transform: translateY(-2px);
+}
+
+.feedback-button:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .content-wrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .image-section {
+    max-width: 400px;
+  }
+
+  .section-image {
+    height: 250px;
+  }
+
+  /* Reset rounded corners for mobile */
+  .left-rounded,
+  .right-rounded {
+    border-radius: 12px;
+  }
+
+  .central-content {
+    padding: 0 2rem;
+  }
+
+  .main-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding: 1rem;
+  }
+
+  .central-content {
+    padding: 0 1rem;
+  }
+
+  .main-title {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .content-text p {
+    font-size: 1rem;
+  }
+
+  .feedback-button {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-section {
+    display: none;
+  }
+
+  .central-content {
+    flex: 1;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .main-title {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,357 @@
+/* ✅ GLOBAL FONT STYLE */
+body,
+.navbar-wrapper,
+.top-bar,
+.navbar-container,
+.nav-links a,
+.logo h1,
+.callforaction,
+.contact-item,
+.social-links,
+.nav-links ul,
+.nav-links li {
+  font-family: "DM Serif Text", serif !important;
+  font-weight: 800 !important;
+}
+
+/* ✅ NAVBAR WRAPPER */
+.navbar-wrapper {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background: white;
+}
+
+/* ✅ TOP CONTACT BAR */
+.top-bar {
+  background-color: rgb(49, 34, 34);
+  color: white;
+  padding: 10px 15px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 2000;
+}
+
+.top-bar > div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* ✅ CONTACT INFO */
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 270px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: white;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.contact-item svg {
+  color: #fbbf24;
+}
+
+/* ✅ SOCIAL LINKS */
+.social-links {
+  margin-right: 170px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fbbf24;
+}
+
+.social-link svg {
+  color: #fbbf24 !important;
+  width: 26px;
+  height: 26px;
+  transition: color 0.3s;
+}
+
+.social-link:hover svg {
+  color: #dc2626 !important;
+}
+
+/* ✅ LANGUAGE TOGGLE */
+.language-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.language-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.language-toggle span {
+  font-weight: 600;
+}
+
+/* ✅ MAIN NAVBAR */
+.navbar-container {
+  background-color: white;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 20px;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  border-bottom: 1px solid #eee;
+}
+
+/* ✅ LOGO */
+.logo {
+  position: absolute;
+  left: 0;
+  z-index: 2;
+}
+
+.logo img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-top: -50px;
+  margin-left: 80px;
+  background: #fff;
+  display: block;
+}
+
+/* ✅ NAV LINKS */
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 70px;
+}
+
+.nav-links li {
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 500;
+  color: #374151;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-links li:hover {
+  color: #dc2626;
+}
+
+.nav-links li::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #dc2626;
+  transition: width 0.3s ease;
+}
+
+.nav-links li:hover::after {
+  width: 100%;
+}
+
+.nav-links li.active {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+/* ✅ HAMBURGER MENU */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  z-index: 2001;
+  margin-left: auto;
+}
+
+.hamburger span {
+  height: 4px;
+  width: 100%;
+  background: #dc2626;
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* ✅ HELPLINE FLOATING BUTTON */
+.helpline-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #dc2626;
+  color: white;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2000;
+  overflow: hidden;
+}
+
+.helpline-btn:hover {
+  width: 140px;
+  border-radius: 30px;
+  justify-content: space-evenly;
+  padding: 0 12px;
+  background: #b91c1c;
+}
+
+.helpline-btn span {
+  display: none;
+  color: white;
+  font-weight: 600;
+}
+
+.helpline-btn:hover span {
+  display: inline;
+}
+
+/* ✅ RESPONSIVE STYLES */
+@media (max-width: 900px) {
+  .navbar-container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 16px;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    width: 220px;
+    background: #fff;
+    box-shadow: -2px 0 16px rgba(0, 0, 0, 0.08);
+    height: 100vh;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 24px;
+    transform: translateX(100%);
+    transition: transform 0.3s;
+    z-index: 2000;
+    display: flex;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .logo img {
+    width: 80px;
+    height: 80px;
+    margin-top: -40px;
+    margin-left: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-bar {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  .contact-info {
+  margin-left: 0px;
+}
+  .contact-item span {
+    font-size: 13px;
+  }
+
+  .social-links {
+    margin-right: 0px;
+    justify-content: center;
+  }
+
+  .language-toggle {
+    margin-top: 4px;
+  }
+
+  .helpline-btn {
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .logo img {
+    width: 70px;
+    height: 70px;
+    margin-top: -35px;
+    margin-left: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-item span {
+    display: none;
+  }
+  .contact-info {
+  margin-left: 0px;
+}
+  .social-links {
+    gap: 10px;
+    margin-right: 0px;
+  }
+
+  .nav-links ul {
+    gap: 15px;
+  }
+
+  .nav-links li {
+    font-size: 16px;
+  }
+
+  .logo img {
+    width: 60px;
+    height: 60px;
+    margin-top: -25px;
+    margin-left: 20px;
+  }
+}

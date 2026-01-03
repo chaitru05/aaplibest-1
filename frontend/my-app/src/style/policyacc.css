@@ -1,0 +1,316 @@
+/* ------------------------------ */
+/* MAIN CONTAINER */
+/* ------------------------------ */
+.policy-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  margin-top: 100px;
+  position: relative;
+}
+
+
+/* ------------------------------ */
+/* TOP BACKGROUND BOX */
+/* ------------------------------ */
+.policy-bg-box {
+  height: 30vh;
+  min-height: 250px;
+  border-radius: 24px;
+  overflow: hidden;
+  padding: 40px;
+  width: 95%;  /* FIXED: removed 1300px */
+  
+  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='120' height='20' patternTransform='scale(2) rotate(150)'><rect x='0' y='0' width='100%' height='100%' fill='%23ecc94bff'/><path d='M-50.129 12.685C-33.346 12.358-16.786 4.918 0 5c16.787.082 43.213 10 60 10s43.213-9.918 60-10c16.786-.082 33.346 7.358 50.129 7.685' stroke-width='1' stroke='%23ffffffff' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(-374,-272)' fill='url(%23a)'/></svg>");
+  background-size: cover;
+  background-position: center;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  padding-top: 50px;
+}
+
+
+/* ------------------------------ */
+/* HERO SECTION */
+/* ------------------------------ */
+.policy-hero-section {
+  align-items: start;
+  margin-bottom: 60px;
+}
+
+.policy-hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a1a;
+}
+
+.policy-hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+/* ------------------------------ */
+/* BULLET LIST */
+/* ------------------------------ */
+.policy-bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.policy-bullet-list li {
+  padding-left: 20px;
+  margin-bottom: 16px;
+  position: relative;
+  line-height: 1.6;
+  color: #2d3748;
+  font-size: 1.5rem;
+}
+
+.policy-bullet-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+
+/* ------------------------------ */
+/* LARGE IMAGE BOX */
+/* ------------------------------ */
+.policy-full-width-rectangle {
+  width: 100%;
+  height: 500px;
+  border-radius: 24px;
+  overflow: hidden;
+  margin-bottom: 60px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.policy-rectangle-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* ------------------------------ */
+/* CARDS GRID */
+/* ------------------------------ */
+.policy-cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.policy-card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.policy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.policy-card-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+
+/* ######################################################## */
+/*                RESPONSIVE: TABLET (≤ 992px)              */
+/* ######################################################## */
+@media (max-width: 992px) {
+
+  .policy-bg-box {
+    grid-template-columns: 1fr; /* stack */
+    padding: 30px;
+    height: auto;
+  }
+
+  .policy-hero-title {
+    font-size: 2.4rem;
+  }
+
+  .policy-cards-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards */
+  }
+
+  .policy-full-width-rectangle {
+    height: 300px; /* smaller */
+  }
+}
+
+
+/* ######################################################## */
+/*                RESPONSIVE: MOBILE (≤ 640px)              */
+/* ######################################################## */
+@media (max-width: 640px) {
+
+  .policy-container {
+    padding: 30px 15px;
+    width: 90%;;
+  }
+
+  .policy-bg-box {
+    padding: 20px;
+    border-radius: 18px;
+    gap: 25px;
+    width: 90%;
+  }
+
+  .policy-hero-title {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .policy-bullet-list li {
+    font-size: 1.1rem;
+  }
+
+  .policy-full-width-rectangle {
+    height: 220px;
+  }
+
+  /* Cards go 1 per row (FULL width) */
+  .policy-cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  .policy-card-image {
+    height: 180px;
+  }
+}
+/* ========================= */
+/* Video Card Overlay */
+/* ========================= */
+
+.video-card {
+  position: relative;
+  cursor: pointer;
+}
+
+.play-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.video-card:hover .play-overlay {
+  opacity: 1;
+}
+
+/* ========================= */
+/* Video Modal */
+/* ========================= */
+
+.video-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.video-modal {
+  width: 90%;
+  max-width: 900px;
+  height: 500px;
+  background: #000;
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-modal iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .video-modal {
+    height: 240px;
+  }
+}
+
+.back-home-btn-policy {
+  position: absolute;           /* KEY FIX */
+  top: 12px;
+  left: 12px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: white;
+  color: #d32f2f;
+
+  padding: 6px 12px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+  z-index: 1000;                 /* stay above content */
+}
+
+/* Hover */
+.back-home-btn-policy:hover {
+  background: #e11d48;
+  color: #fff;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .back-home-btn-policy {
+    padding: 8px 14px;
+    font-size: 16px;
+    border-radius: 12px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .back-home-btn-policy {
+    padding: 10px 16px;
+    font-size: 18px;
+    border-radius: 14px;
+    margin-top: 10px;
+    height: 30px;
+  }
+}

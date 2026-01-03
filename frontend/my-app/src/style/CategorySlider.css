@@ -1,0 +1,167 @@
+.slider-container {
+  background: #ffffff;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  perspective: 1000px;
+}
+
+/* Decorative circles */
+.slider-container::before,
+.slider-container::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.3), transparent 70%);
+  z-index: 0;
+}
+
+.slider-container::before {
+  width: 400px;
+  height: 400px;
+  top: -100px;
+  left: -150px;
+}
+
+.slider-container::after {
+  width: 500px;
+  height: 500px;
+  bottom: -150px;
+  right: -150px;
+}
+
+.gallery-title {
+  font-size: 3rem;
+  text-align: center;
+  color: #0e0d0d;
+  font-family: "Playfair Display", serif;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 10;
+  
+  display: inline-block;
+  padding-bottom: 30px; /* Adds space for highlight visibility */
+}
+
+.gallery-title::after {
+  content: "";
+  display: block; /* ✅ Make it render as a real box */
+  position: absolute;
+  bottom: 0; /* Aligns properly below text */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110%; /* ✅ Your desired width */
+  height: 70px; /* ✅ Your desired height */
+  background-image: url("/src/assets/yellow-high.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+  pointer-events: none;
+}
+
+
+.slider {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transform-style: preserve-3d;
+  gap: 180px; /* Spread cards more */
+  z-index: 2;
+}
+
+.slider-card {
+  position: absolute;
+  width: 70%;
+  max-width: 520px;
+  height: 420px;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-style: preserve-3d;
+}
+
+.slider-card:hover {
+  transform: translateY(-10px) scale(1.05) !important;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6),
+    0 0 30px rgba(255, 215, 0, 0.4) !important;
+  border: 1px solid rgba(255, 215, 0, 0.5);
+}
+
+.slider-card.active {
+  z-index: 10;
+  transform: scale(1) translateZ(0) !important;
+}
+
+.card-image-work {
+  width: 100%;
+  height: 70%;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-image-work img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.slider-card:hover .card-image-work img {
+  transform: scale(1.1);
+}
+
+.card-content-work {
+  padding: 20px;
+  background: rgba(5, 5, 5, 0.9);
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.card-content-work h2 {
+  font-size: 1.4rem;
+  color: #f0e6d2;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 1px;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+}
+
+@media (max-width: 1024px) {
+  .slider {
+    gap: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider {
+    gap: 50px;
+  }
+  .gallery-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-title {
+    font-size: 2rem;
+  }
+  .slider-container {
+  
+  height: 70vh;
+  
+}
+}
