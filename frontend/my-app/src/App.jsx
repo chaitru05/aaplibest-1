@@ -20,6 +20,7 @@ import ComplaintForm from "./component/ComplaintForm.jsx"
 import PassengerIntervention from "./pages/PassengerIntervention.jsx"
 import PublicAwareness from "./pages/PublicAwareness.jsx"
 import ScrollToTop from "./component/ScrollToTop.jsx"
+import TeamResponsive from "./component/TeamResponsive"
 
 function HomePage() {
   const { language } = useLanguage()
@@ -111,8 +112,9 @@ function HomePage() {
       <About />
       <About1/>
       <section id="team">
-        <TeamSection />
-      </section>
+         <TeamResponsive />
+       </section>
+
       <section id="work">
         <Ourwork /> 
       </section>

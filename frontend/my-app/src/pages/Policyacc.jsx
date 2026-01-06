@@ -103,7 +103,7 @@ const Policyacc = () => {
           <div
             className="policy-card video-card"
             onClick={() =>
-              openVideo("./policy/policy-video-2.mp4")
+              openVideo("https://res.cloudinary.com/dhrssdlwp/video/upload/f_auto,q_auto/policy-video-2_q4utrw.mp4")
             }
           >
             <img

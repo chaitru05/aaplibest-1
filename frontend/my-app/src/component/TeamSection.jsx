@@ -242,11 +242,11 @@ const TeamSection = () => {
   useEffect(() => {
   const handleResize = () => {
     if (window.innerWidth <= 768) {
-      setCardsPerView(1)       // 📱 Mobile → 1 card
+      setCardsPerView(2.5)       // 📱 Mobile → 1 card
     } else if (window.innerWidth <= 1024) {
-      setCardsPerView(2)       // 📱 Tablet → 2 cards
+      setCardsPerView(2.5)       // 📱 Tablet → 2 cards
     } else {
-      setCardsPerView(2)       // 💻 Desktop → 3 cards
+      setCardsPerView(2.5)       // 💻 Desktop → 3 cards
     }
   }
 

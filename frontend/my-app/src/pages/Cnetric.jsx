@@ -111,7 +111,7 @@ const Cnetric = () => {
         {/* Hero video remains unchanged */}
         <div className={styles["hero-video-container"]}>
           <video width="100%" height="auto" controls>
-            <source src="./centric/centric-video.mp4" type="video/mp4" />
+            <source src="https://res.cloudinary.com/dhrssdlwp/video/upload/f_auto,q_auto/centric-video_giyvfr.mp4" type="video/mp4" />
           </video>
         </div>
       </section>

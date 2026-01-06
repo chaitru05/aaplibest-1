@@ -384,8 +384,8 @@ centric: {
       "This heartfelt campaign honored their silent yet invaluable service to Mumbai city.",
 
     vitthalCards: [
-      { id: 1, image: "/centric/best-bus-conductors-felicitation-ceremony.jpeg", hasVideo: true, videoUrl: "/centric/vithal-1.mp4" },
-      { id: 2, image: "/centric/vitthalimg2.jpeg", hasVideo: true, videoUrl: "/centric/vithal-2.mp4" },
+      { id: 1, image: "/centric/best-bus-conductors-felicitation-ceremony.jpeg", hasVideo: true, videoUrl: "https://res.cloudinary.com/dhrssdlwp/video/upload/f_auto,q_auto/vithal-1_ovry0g.mp4" },
+      { id: 2, image: "/centric/vitthalimg2.jpeg", hasVideo: true, videoUrl: "https://res.cloudinary.com/dhrssdlwp/video/upload/v1767703751/vithal-2_xiy7iu.mp4" },
       { id: 3, image: "/centric/vitthalimg.jpeg", hasVideo: false }
     ],
 
@@ -396,7 +396,7 @@ centric: {
 
     bestDayMedia: [
       { id: 1, image: "/centric/BEST-DAY-2.jpeg", hasVideo: false },
-      { id: 2, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCefatA8TXJLpYhWPPWwgm78tUqjr91ooSQw&s", hasVideo: true, videoUrl: "/centric/centric-video.mp4" },
+      { id: 2, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCefatA8TXJLpYhWPPWwgm78tUqjr91ooSQw&s", hasVideo: true, videoUrl: "https://res.cloudinary.com/dhrssdlwp/video/upload/f_auto,q_auto/bestexb_k7ymoq.mp4" },
       { id: 3, image: "/centric/BEST-DAY-1.jpeg", hasVideo: false }
     ],
   },

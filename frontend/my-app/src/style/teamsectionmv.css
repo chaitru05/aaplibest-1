@@ -1,0 +1,158 @@
+.team-section-mv {
+  background: #6d0f0f;
+  padding: 60px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.team-title-mv {
+  font-size: 2.2rem;
+  color: #f5c12b;
+  margin-bottom: 10px;
+  font-family: "Playfair Display", serif;
+}
+
+.team-desc-mv {
+  max-width: 500px;
+  margin: 0 auto 40px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #f2eaea;
+}
+
+.team-carousel-mv {
+  position: relative;
+}
+
+/* Card */
+.team-card-mv {
+  width: 100px;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 0.4s ease;
+}
+
+.team-card-mv img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.team-info-mv {
+  background: #f6a600;
+  padding: 14px;
+  text-align: left;
+}
+
+.team-info-mv h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.team-info-mv p {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #3b2b00;
+}
+
+/* Navigation buttons */
+.nav-btn-mv {
+  position: absolute;
+  background: #fff;
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.nav-btn-mv:hover {
+  background: #f6a600;
+}
+
+.left-mv {
+  left: -10px;
+}
+
+.right-mv {
+  right: -10px;
+}
+
+/* ===============================
+   MOBILE VIEW ONLY
+   =============================== */
+@media (max-width: 480px) {
+
+  .team-section-mv {
+    padding: 32px 12px;
+  }
+
+  .team-title-mv {
+    font-size: 1.7rem;
+  }
+
+  .team-desc-mv {
+    font-size: 1rem;
+    margin-bottom: 22px;
+  }
+
+  .team-carousel-mv {
+    width: 100%;
+    padding: 0 40px;
+    box-sizing: border-box;
+    touch-action: pan-y;
+  }
+
+  .team-card-mv {
+    width: 290px;
+    height: 430px;
+    margin: 0 auto;
+    border-radius: 18px;
+    background: #f6a600;
+    cursor: grab;
+  }
+
+  .team-card-mv:active {
+    cursor: grabbing;
+  }
+
+  .team-card-mv img {
+    height: 320px;
+    width: 280px;
+    padding-top: 10px;
+    border-radius: 30px;
+  }
+
+  .team-info-mv h3 {
+    font-size: 1.5rem;
+  }
+
+  .team-info-mv p {
+    font-size: 1.2rem;
+  }
+
+  .nav-btn-mv {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+  }
+
+  .left-mv {
+    left: 0;
+  }
+
+  .right-mv {
+    right: 0;
+  }
+}
