@@ -8,131 +8,77 @@ export default function Teamsectionmv() {
   const { language } = useLanguage()
   const [index, setIndex] = useState(0)
 
-  // src/data/teamData.js
+  // 🔹 Prevent swipe when arrow is clicked
+  const isButtonClick = useRef(false)
 
- const teamMembers = [
-  {
-    id: 1,
-    name: {
-      en: "Rupesh Shelatkar",
-      mr: "रुपेश शेलतकर",
+  const teamMembers = [
+    {
+      id: 1,
+      name: { en: "Rupesh Shelatkar", mr: "रुपेश शेलतकर" },
+      title: { en: "Founder and President", mr: "संस्थापक आणि अध्यक्ष" },
+      image: "/team/Rupesh.jpeg",
     },
-    title: {
-      en: "Founder and President",
-      mr: "संस्थापक आणि अध्यक्ष",
+    {
+      id: 2,
+      name: { en: "Siddhesh Mhatre", mr: "सिद्धेश म्हात्रे" },
+      title: { en: "Secretary", mr: "सचिव" },
+      image: "/team/siddeshM.jpeg",
     },
-    image: "/team/Rupesh.jpeg",
-  },
-  {
-    id: 2,
-    name: {
-      en: "Siddhesh Mhatre",
-      mr: "सिद्धेश म्हात्रे",
+    {
+      id: 3,
+      name: { en: "Atharva Naik", mr: "अथर्व नाईक" },
+      title: {
+        en: "Information Technology and Social Media",
+        mr: "माहिती तंत्रज्ञान व समाज माध्यम",
+      },
+      image: "/team/athrav.jpeg",
     },
-    title: {
-      en: "Secretary",
-      mr: "सचिव",
+    {
+      id: 4,
+      name: { en: "Siddhesh Kanse", mr: "सिद्धेश कानसे" },
+      title: { en: "Treasurer", mr: "खजिनदार" },
+      image: "/team/Siddesh Kanse.JPG",
     },
-    image: "/team/siddeshM.jpeg",
-  },
-  {
-    id: 3,
-    name: {
-      en: "Atharva Naik",
-      mr: "अथर्व नाईक",
+    {
+      id: 5,
+      name: { en: "Kunal Akre", mr: "कुणाल आक्रे" },
+      title: { en: "Vice President", mr: "उपाध्यक्ष" },
+      image: "/team/kunal.jpeg",
     },
-    title: {
-      en: "Information Technology and Social Media",
-      mr: "माहिती तंत्रज्ञान व समाज माध्यम",
+    {
+      id: 6,
+      name: { en: "Pankaj Jaokar", mr: "पंकज जाओकर" },
+      title: { en: "Secretary", mr: "सचिव" },
+      image: "/Pankaj.jpg",
     },
-    image: "/team/athrav.jpeg",
-  },
-  {
-    id: 4,
-    name: {
-      en: "Siddhesh Kanse",
-      mr: "सिद्धेश कानसे",
+    {
+      id: 7,
+      name: { en: "Prathamesh Rege", mr: "प्रथमेश रेगे" },
+      title: {
+        en: "Information Technology and Social Media",
+        mr: "माहिती तंत्रज्ञान व समाज माध्यम",
+      },
+      image: "/team/prathmeahrege.jpeg",
     },
-    title: {
-      en: "Treasurer",
-      mr: "खजिनदार",
+    {
+      id: 8,
+      name: { en: "Swapnil Gaonkar", mr: "स्वप्निल गावंकर" },
+      title: { en: "Spokesperson", mr: "प्रवक्ता" },
+      image: "/team/swapnilgaonkar.jpeg",
     },
-    image: "/team/Siddesh Kanse.JPG",
-  },
-  {
-    id: 5,
-    name: {
-      en: "Kunal Akre",
-      mr: "कुणाल आक्रे",
+    {
+      id: 9,
+      name: { en: "Gaurav Chindarkar", mr: "गौरव चिंदारकर" },
+      title: { en: "Spokesperson", mr: "प्रवक्ता" },
+      image: "/team/gaurav.jpeg",
     },
-    title: {
-      en: "Vice President",
-      mr: "उपाध्यक्ष",
+    {
+      id: 10,
+      name: { en: "Aakshay Desai", mr: "आक्षय देसाई" },
+      title: { en: "Member", mr: "सभासद" },
+      image: "/Akshay Desai.jpg",
     },
-    image: "/team/kunal.jpeg",
-  },
-  {
-    id: 6,
-    name: {
-      en: "Pankaj Jaokar",
-      mr: "पंकज जाओकर",
-    },
-    title: {
-      en: "Secretary",
-      mr: "सचिव",
-    },
-    image: "/Pankaj.jpg",
-  },
-  {
-    id: 7,
-    name: {
-      en: "Prathamesh Rege",
-      mr: "प्रथमेश रेगे",
-    },
-    title: {
-      en: "Information Technology and Social Media",
-      mr: "माहिती तंत्रज्ञान व समाज माध्यम",
-    },
-    image: "/team/prathmeahrege.jpeg",
-  },
-  {
-    id: 8,
-    name: {
-      en: "Swapnil Gaonkar",
-      mr: "स्वप्निल गावंकर",
-    },
-    title: {
-      en: "Spokesperson",
-      mr: "प्रवक्ता",
-    },
-    image: "/team/swapnilgaonkar.jpeg",
-  },
-  {
-    id: 9,
-    name: {
-      en: "Gaurav Chindarkar",
-      mr: "गौरव चिंदारकर",
-    },
-    title: {
-      en: "Spokesperson",
-      mr: "प्रवक्ता",
-    },
-    image: "/team/gaurav.jpeg",
-  },
-  {
-    id: 10,
-    name: {
-      en: "Aakshay Desai",
-      mr: "आक्षय देसाई",
-    },
-    title: {
-      en: "Member",
-      mr: "सभासद",
-    },
-    image: "/Akshay Desai.jpg",
-  },
-]
-
+  ]
 
   const prev = () => {
     setIndex((i) => (i - 1 + teamMembers.length) % teamMembers.length)
@@ -142,7 +88,7 @@ export default function Teamsectionmv() {
     setIndex((i) => (i + 1) % teamMembers.length)
   }
 
-  // swipe refs
+  // 🔹 Swipe refs
   const touchStartX = useRef(0)
   const touchEndX = useRef(0)
 
@@ -155,7 +101,11 @@ export default function Teamsectionmv() {
   }
 
   const handleTouchEnd = () => {
+    // 🚫 Ignore swipe if arrow was clicked
+    if (isButtonClick.current) return
+
     const swipeDistance = touchStartX.current - touchEndX.current
+
     if (swipeDistance > 60) next()
     else if (swipeDistance < -60) prev()
   }
@@ -170,8 +120,8 @@ export default function Teamsectionmv() {
 
       <p className="team-desc-mv">
         {language === "mr"
-          ? "उत्साही टीमला भेटा — एक समर्पित समूह जो उद्दिष्टाने आणि मुंबईच्या BEST बसप्रेमाने एकत्र आला आहे. रणनीती आखणाऱ्यांपासून ते जनजागृती करणाऱ्यांपर्यंत, प्रत्येक सदस्य सार्वजनिक वाहतुकीचे संरक्षण आणि प्रसार करण्याच्या आमच्या ध्येयाला बळकट करण्यामध्ये महत्त्वाची भूमिका बजावतो."
-          : "Meet the passionate team behind Aapli BEST Aaplyachsathi—a dedicated group united by purpose and a deep love for Mumbai’s BEST buses. From strategists to advocates, each member plays a vital role in strengthening our mission to protect and promote public transport."}
+          ? "उत्साही टीमला भेटा — एक समर्पित समूह जो उद्दिष्टाने आणि मुंबईच्या BEST बसप्रेमाने एकत्र आला आहे."
+          : "Meet the passionate team behind Aapli BEST Aaplyachsathi—a dedicated group united by purpose and love for Mumbai’s BEST buses."}
       </p>
 
       <div
@@ -180,8 +130,19 @@ export default function Teamsectionmv() {
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        <button className="nav-btn-mv left-mv" onClick={prev}>❮</button>
+        {/* ◀ LEFT ARROW */}
+        <button
+          className="nav-btn-mv left-mv"
+          onTouchStart={() => (isButtonClick.current = true)}
+          onClick={() => {
+            prev()
+            isButtonClick.current = false
+          }}
+        >
+          ❮
+        </button>
 
+        {/* CARD */}
         <div className="team-card-mv">
           <img src={member.image} alt={member.name[language]} />
 
@@ -191,7 +152,17 @@ export default function Teamsectionmv() {
           </div>
         </div>
 
-        <button className="nav-btn-mv right-mv" onClick={next}>❯</button>
+        {/* ▶ RIGHT ARROW */}
+        <button
+          className="nav-btn-mv right-mv"
+          onTouchStart={() => (isButtonClick.current = true)}
+          onClick={() => {
+            next()
+            isButtonClick.current = false
+          }}
+        >
+          ❯
+        </button>
       </div>
     </section>
   )

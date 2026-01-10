@@ -1,3 +1,6 @@
+/* ==============================
+   Slider Container
+   ============================== */
 .slider-container {
   background: #ffffff;
   width: 100%;
@@ -8,7 +11,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  perspective: 1000px;
+  perspective: 1200px;
 }
 
 /* Decorative circles */
@@ -35,6 +38,9 @@
   right: -150px;
 }
 
+/* ==============================
+   Title
+   ============================== */
 .gallery-title {
   font-size: 3rem;
   text-align: center;
@@ -43,20 +49,18 @@
   letter-spacing: 2px;
   position: relative;
   z-index: 10;
-  
   display: inline-block;
-  padding-bottom: 30px; /* Adds space for highlight visibility */
+  padding-bottom: 30px;
 }
 
 .gallery-title::after {
   content: "";
-  display: block; /* ✅ Make it render as a real box */
   position: absolute;
-  bottom: 0; /* Aligns properly below text */
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 110%; /* ✅ Your desired width */
-  height: 70px; /* ✅ Your desired height */
+  width: 110%;
+  height: 70px;
   background-image: url("/src/assets/yellow-high.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -65,7 +69,9 @@
   pointer-events: none;
 }
 
-
+/* ==============================
+   Slider
+   ============================== */
 .slider {
   width: 100%;
   height: 70%;
@@ -74,36 +80,57 @@
   align-items: center;
   position: relative;
   transform-style: preserve-3d;
-  gap: 180px; /* Spread cards more */
   z-index: 2;
+  touch-action: pan-y;
 }
 
+/* ==============================
+   Slider Card
+   ============================== */
 .slider-card {
   position: absolute;
   width: 70%;
   max-width: 520px;
   height: 420px;
-  border-radius: 15px;
+  border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
-  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background: #000;
   transform-style: preserve-3d;
   text-decoration: none;
   color: inherit;
+  transition:
+    transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.4s ease,
+    opacity 0.4s ease;
 }
 
-.slider-card:hover {
-  transform: translateY(-10px) scale(1.05) !important;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6),
-    0 0 30px rgba(255, 215, 0, 0.4) !important;
-  border: 1px solid rgba(255, 215, 0, 0.5);
-}
-
+/* ACTIVE CARD */
 .slider-card.active {
-  z-index: 10;
-  transform: scale(1) translateZ(0) !important;
+  z-index: 20;
 }
 
+/* Hover only on ACTIVE card */
+.slider-card.active:hover {
+  transform: translateY(-12px) scale(1.05) !important;
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.6),
+    0 0 35px rgba(255, 215, 0, 0.45);
+  border: 1px solid rgba(255, 215, 0, 0.5);
+  z-index: 30;
+}
+
+/* Disable hover jump on mobile */
+@media (hover: none) {
+  .slider-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
+
+/* ==============================
+   Image
+   ============================== */
 .card-image-work {
   width: 100%;
   height: 70%;
@@ -118,62 +145,89 @@
   transition: transform 0.7s ease;
 }
 
-.slider-card:hover .card-image-work img {
-  transform: scale(1.1);
+/* Zoom image only for active hover */
+.slider-card.active:hover .card-image-work img {
+  transform: scale(1.12);
 }
 
+/* ==============================
+   Card Content
+   ============================== */
 .card-content-work {
-  padding: 20px;
-  background: rgba(5, 5, 5, 0.9);
-  height: 20%;
+  padding: 16px;
+  background: rgba(5, 5, 5, 0.92);
+  height: 30%;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;     /* ✅ force center alignment */
+
+  text-align: center;
+
+  /* ✅ IMPORTANT */
+  width: 100%;
+  box-sizing: border-box;
 }
 
+
 .card-content-work h2 {
-  margin: 0;              /* ✅ remove default margin */
+  margin: 0;
+  width: 100%;                 /* ✅ forces true centering */
+  max-width: 90%;              /* ✅ prevents visual shift */
+  text-align: center;
+
   font-size: 1.4rem;
   color: #f0e6d2;
   font-family: "Inter", sans-serif;
-  letter-spacing: 1px;
-  text-align: center;
+  letter-spacing: 0.5px;
+  line-height: 1.35;
+
+  margin-left: auto;           /* ✅ visual centering */
+  margin-right: auto;
 }
 
 
+/* ==============================
+   Responsive
+   ============================== */
 @media (max-width: 1024px) {
-  .slider {
-    gap: 100px;
+  .slider-card {
+    height: 380px;
   }
 }
 
 @media (max-width: 768px) {
-  .slider {
-    gap: 50px;
-  }
   .gallery-title {
     font-size: 2.5rem;
+  }
+
+  .slider-card {
+    width: 80%;
+    height: 350px;
   }
 }
 
 @media (max-width: 480px) {
+  .slider-container {
+    height: 60vh;
+  }
+
   .gallery-title {
     font-size: 2rem;
   }
-  .slider-container {
-  
-  height: 60vh;
-  
-}
-.card-content-work h2 {
-    font-size: 1.2rem;
-  }
+
   .slider-card {
-  position: absolute;
-  width: 70%;
-  max-width: 520px;
-  height: 320px;
-  
-}
+    width: 65%;
+    height: 300px;
+  }
+
+   .card-content-work {
+    padding: 14px;
+  }
+
+  .card-content-work h2 {
+    font-size: 1.15rem;
+    max-width: 95%;            /* ✅ mobile visual balance */
+    line-height: 1.3;
+  }
 }
