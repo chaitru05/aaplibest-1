@@ -47,12 +47,6 @@ export default function Teamsectionmv() {
     },
     {
       id: 6,
-      name: { en: "Pankaj Jaokar", mr: "पंकज जाओकर" },
-      title: { en: "Secretary", mr: "सचिव" },
-      image: "/Pankaj.jpg",
-    },
-    {
-      id: 7,
       name: { en: "Prathamesh Rege", mr: "प्रथमेश रेगे" },
       title: {
         en: "Information Technology and Social Media",
@@ -61,23 +55,17 @@ export default function Teamsectionmv() {
       image: "/team/prathmeahrege.jpeg",
     },
     {
-      id: 8,
+      id: 7,
       name: { en: "Swapnil Gaonkar", mr: "स्वप्निल गावंकर" },
       title: { en: "Spokesperson", mr: "प्रवक्ता" },
       image: "/team/swapnilgaonkar.jpeg",
     },
     {
-      id: 9,
+      id: 8,
       name: { en: "Gaurav Chindarkar", mr: "गौरव चिंदारकर" },
       title: { en: "Spokesperson", mr: "प्रवक्ता" },
       image: "/team/gaurav.jpeg",
-    },
-    {
-      id: 10,
-      name: { en: "Aakshay Desai", mr: "आक्षय देसाई" },
-      title: { en: "Member", mr: "सभासद" },
-      image: "/Akshay Desai.jpg",
-    },
+    }
   ]
 
   const prev = () => {
