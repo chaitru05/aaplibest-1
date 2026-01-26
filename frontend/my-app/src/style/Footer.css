@@ -50,6 +50,7 @@
   color: #ccc;
   font-size: 0.92rem;
   line-height: 1.5;
+  
   max-width: 95%;
 }
 
@@ -189,6 +190,6 @@
     line-height: 1.5;
     max-width: 95%;
     margin-top: 10px;
-    text-align: justify;
+    text-align: start;
   }
 }

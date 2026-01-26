@@ -134,7 +134,7 @@ export const translations = {
     description:
       "Aapli BEST Aaplyachsathi is a people-driven NGO dedicated to uniting passengers and workers of Mumbai’s iconic BEST buses. We strive to preserve this lifeline of the city by promoting fairness, opposing privatization, and protecting the rights and dignity of all who keep Mumbai moving.",
     shortdesciption:
-      "Aapli BEST Aaplyachsathi is a people-focused NGO working to strengthen the bond between Mumbai’s BEST passengers and workers.",
+      "Aapli BEST Aaplyachsathi is a people-focused NGO working to strengthen the bond between passengers and workers .",
       quickLinks: {
       title: "Quick Links",
       bestTransport: "BEST Transport",
